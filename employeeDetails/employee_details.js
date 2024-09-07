@@ -5,8 +5,9 @@ const employees = [
       //... More employee records can be added here
 ];
 
-// Function to dipslay all employees
-const totalEmployees = employees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary}</p>`).join('');
+ // Function to display all employees
+ const totalEmployees = employees.map((employee, index) => `<p>${employee.id}: ${employee.name}: ${employee.name} - ${employee.department} - $${employee.salary}</p>`).join('');
+ document.getElementById('employeesDetails').innerHTML = totalEmployees;
 
 function calculateTotalSalaries() {
       const totalSalaries = employees.reduce((acc, employee) => acc + employee.salary, 0);
