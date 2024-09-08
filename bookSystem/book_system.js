@@ -27,7 +27,8 @@ function showbooks(){
     <p><em>Book Name:</em> ${book.name}</p>
     <p><em>Author Name:</em> ${book.authorName}</p>
     <p><em>Book Description:</em> ${book.bookDescription}</p>
-    <p><em>No. of Pages:</em> ${book.pagesNumber} page(s)</p>`);
+    <p><em>No. of Pages:</em> ${book.pagesNumber} page(s)</p>
+    <button onclick="deleteBook(${index})">Delete</button>`);
     document.getElementById('books').innerHTML = bookDiv.join('');
 }
 
@@ -37,4 +38,15 @@ function clearInputs(){
     document.getElementById('authorName').value = '';
     document.getElementById('bookDescription').value = '';
     document.getElementById('pagesNumber').value = '';
+}
+
+// Delete Book 
+function deleteBook(index){
+ // Using splice array method
+    if (index >= 0 && index < books.length){
+        books.splice(index, 1);
+        showbooks();
+    } else {
+        alert('Invalid book index');
+    }
 }
